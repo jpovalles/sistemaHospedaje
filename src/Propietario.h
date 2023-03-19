@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <string>
-
+#include "Hogar.h"
 using namespace std;
 
 class Propietario {
@@ -17,10 +17,23 @@ private:
     string sexo;
     string nacimiento;
     int puntaje;
-    int recibirHuesped;
+    int disponibilidad;
+    Hogar* pHogar;
 
 public:
-    Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int recibirHuesped);
+    Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
+    void agregarHogar(string direccion, string descripcion, int camas, int bebes);
+    void setId(int id);
+    int getId();
+    void setNombre(string nombre);
+    string getNombre();
+    void setSexo(string sexo);
+    string getSexo();
+    void setNacimiento(string nacimiento);
+    string getNacimiento();
+    int getPuntaje();
+    void setDisponibilidad(int disponibilidad);
+    int getDisponibilidad();
 };
 
 
