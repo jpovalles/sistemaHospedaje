@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include "Hogar.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private:
     string nacimiento;
     int puntaje;
     int recibirHuesped;
+    Hogar* pHogar;
 
 public:
     Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int recibirHuesped);
