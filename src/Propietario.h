@@ -1,0 +1,14 @@
+//
+// Created by LENOVO on 19/03/2023.
+//
+
+#ifndef SISTEMAHOSPEDAJE_PROPIETARIO_H
+#define SISTEMAHOSPEDAJE_PROPIETARIO_H
+
+
+class Propietario {
+
+};
+
+
+#endif //SISTEMAHOSPEDAJE_PROPIETARIO_H
