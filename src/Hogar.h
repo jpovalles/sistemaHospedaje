@@ -19,6 +19,10 @@ private:
 
 public:
     Hogar(string direccion, string descripcion, int camas, int bebes);
+    string getDireccion();
+    string getDescirpcion();
+    int getCamas();
+    int getBebes();
 };
 
 
