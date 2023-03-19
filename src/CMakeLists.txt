@@ -1,4 +1,4 @@
-file(GLOB_RECURSE SOURCES )  #Todas las fuentes sin el Main
+file(GLOB_RECURSE SOURCES Propietario.cpp Propietario.h)  #Todas las fuentes sin el Main
 
 set(BINARY ${CMAKE_PROJECT_NAME})  # El nombre va a a estar en el CMake principal
 
