@@ -80,6 +80,40 @@ void hacerReserva(app* pApp){
     pApp->getMapaReservas()[llaveA]->modificarDisp(pApp->getMapaReservas()[llaveA]->getPropietario(), 0);
 }
 
+// string fecha, int calificacion, string comentario, string origen, string destino
+void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
+    string comentario, origen, destino;
+    int calificacion;
+
+    cout << "Sr " << huespedTemp->getNombre() << " valore el servicio del 1 al 5\n";
+    cin >> calificacion;
+    cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
+    cin >> comentario;
+
+    Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
+    evHuesped.actualizarPuntajeP(propietarioTemp);
+    // addEvaluacion();
+
+    Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
+    evPropietario.actualizarPuntajeH(huespedTemp);
+    // addEvaluacion();
+}
+
+void eliminarReserva(app* pApp){
+    int llave;
+    cout<<"Quien desea eliminar la reserva? (Escribe tu id): "<<endl;
+    cin>>llave;
+
+    string aux = pApp->getMapaReservas()[llave]->getFechaF();
+    huesped *huespedTemp =  pApp->getMapaReservas()[llave]->getHuesped();
+    Propietario *propietarioTemp = pApp->getMapaReservas()[llave]->getPropietario();
+
+    pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
+    pApp->checkout(llave);
+
+    evaluacion(huespedTemp, propietarioTemp, aux);
+}
+
 void mostrarMenu(app *pApp){
     int opcion = 0;
     do{
@@ -104,7 +138,7 @@ void mostrarMenu(app *pApp){
                 hacerReserva(pApp);
                 break;
             case 4:
-                cout << "En manenimiento\n";
+                eliminarReserva(pApp);
                 break;
             default:
                 break;
@@ -112,45 +146,9 @@ void mostrarMenu(app *pApp){
     }while(opcion != 0);
 }
 
-// string fecha, int calificacion, string comentario, string origen, string destino
-void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
-    string comentario, origen, destino;
-    int calificacion;
-
-    cout << "Sr " << huespedTemp->getNombre() << " valore el servicio del 1 al 5\n";
-    cin >> calificacion;
-    cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
-    cin >> comentario;
-
-    Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
-    evHuesped.actualizarPuntajeP(propietarioTemp);
-    // addEvaluacion();
-
-    Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
-    evPropietario.actualizarPuntajeH(huespedTemp);
-    // addEvaluacion();
-}
-
-void eliminarReserva(app* pApp){
-    int idH, idP, llave;
-    cout<<"Quien desea eliminar la reserva? (Escribe tu id): "<<endl;
-    cin>>llave;
-    string aux = pApp->getMapaReservas()[llave]->getFechaF();
-    pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
-    pApp->checkout(llave);
-    
-    unordered_map<int, huesped*> mapHTemp = pApp->getMapaH();
-    unordered_map<int, Propietario*> mapPTemp = pApp->getMapaProp();
-
-    huesped *huespedTemp =  mapHTemp[idH];
-    Propietario *propietarioTemp = mapPTemp[idP];
-
-    string fechaReserva;
-
-    evaluacion(huespedTemp, propietarioTemp, fechaReserva);
 
 
-}
+
 
 
 
