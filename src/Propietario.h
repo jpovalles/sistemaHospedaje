@@ -38,7 +38,7 @@ public:
     string getNacimiento();
     void setPuntaje(int puntaje);
     int getPuntaje();
-    void setDisponibilidad();
+    void setDisponibilidad(int disponibilidad);
     int getDisponibilidad();
     Hogar* getHogar();
 };

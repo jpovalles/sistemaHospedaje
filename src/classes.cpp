@@ -62,7 +62,7 @@ void crearHuesped(app* pApp){
 void hacerReserva(app* pApp){
     int llaveA, llaveB;
     string fechaInicio, fechaFin;
-    cout<<"Quién eres? (ID):"<<endl;
+    cout<<"Quién eres? (Escribe tu ID):"<<endl;
     pApp->mostrarHuespedes();
     cin>>llaveA;
     huesped* huespedTemp = pApp->getMapaH()[llaveA];
@@ -76,8 +76,8 @@ void hacerReserva(app* pApp){
     pApp->mostrarHogares();
     cin>>llaveB;
     Propietario* propTemp = pApp->getMapaProp()[llaveB];
-
     pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
+    pApp->getMapaReservas()[llaveA]->modificarDisp(pApp->getMapaReservas()[llaveA]->getPropietario(), 0);
 }
 
 void mostrarMenu(app *pApp){
@@ -132,7 +132,13 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 }
 
 void eliminarReserva(app* pApp){
-    int idH, idP;
+    int idH, idP, llave;
+    cout<<"Quien desea eliminar la reserva? (Escribe tu id): "<<endl;
+    cin>>llave;
+    string aux = pApp->getMapaReservas()[llave]->getFechaF();
+    pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
+    pApp->checkout(llave);
+    
     unordered_map<int, huesped*> mapHTemp = pApp->getMapaH();
     unordered_map<int, Propietario*> mapPTemp = pApp->getMapaProp();
 

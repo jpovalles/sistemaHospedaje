@@ -21,6 +21,7 @@ private:
 
 public:
     Reserva(string fechaInicio,string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    void modificarDisp(Propietario* pPropietario, int disponibilidad);
     string getFechaI();
     string getFechaF();
     Propietario* getPropietario();
