@@ -58,3 +58,7 @@ unordered_map<int, huesped*> app::getMapaH(){
 unordered_map<int, Propietario*> app::getMapaProp(){
     return mapaPropietarios;
 }
+
+unordered_map<int, Reserva*> app::getMapaReservas(){
+    return listaReservas;
+}

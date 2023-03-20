@@ -6,24 +6,9 @@
 
 Reserva::Reserva(string fechaInicio,string fechaFin, Propietario* pPropietario, huesped* pHuesped): fechaInicio(fechaInicio), fechaFin(fechaFin), pPropietario(pPropietario), pHuesped(pHuesped){}
 
-
-
-/*
-void Reserva::hacerReserva(app* pApp){
-    int llaveA, llaveB;
-    string fechaInicio, fechaFin;
-    cout<<"Quién eres? (ID):"<<endl;
-    pApp->mostrarHuespedes();
-    cin>>llaveA;
-    huesped* huespedTemp = pApp->getMapaH()[llaveA];
-    cout<<"Fecha inicial de la reserva: "<<endl;
-    cin>>fechaInicio;
-    cout<<"Fecha Final de la reserva: "<<endl;
-    cin>>fechaFin;
-    cout<<"Donde te gustaria hospedarte: "<<endl;
-    pApp->mostrarPropietarios();
-    Propietario* propTemp = pApp->getMapaProp()[llaveB];
-}*/
+void Reserva::modificarDisp(Propietario* pPropietario, int disponibilidad){
+    pPropietario->setDisponibilidad(disponibilidad);
+}
 
 string Reserva::getFechaI() {
     return fechaInicio;

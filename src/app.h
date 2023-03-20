@@ -34,6 +34,7 @@ public:
     unordered_map<int, Propietario*> getMapaProp();
 
     void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    unordered_map<int, Reserva*> getMapaReservas();
 };
 
 
