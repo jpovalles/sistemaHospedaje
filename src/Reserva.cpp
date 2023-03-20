@@ -3,5 +3,3 @@
 //
 
 #include "Reserva.h"
-
-Reserva::Reserva(string fechaInicio, string fechaFin, class huesped *huesped, class Propietario *Propietario):fechaInicio(fechaInicio), fechaFin(fechaFin), huesped(huesped), Propietario(Propietario){}
