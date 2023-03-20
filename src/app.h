@@ -20,7 +20,7 @@ class app {
 private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
-    vector<Reserva*> listaReservas;
+    unordered_map<int, Reserva*> listaReservas;
 public:
     app() = default;
 

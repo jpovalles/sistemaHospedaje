@@ -42,7 +42,7 @@ void app::mostrarPropietarios(){
 
 void app::reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped){
     Reserva* reservaTemp = new Reserva(fechaInicio, fechaFin, pPropietario, pHuesped);
-    this->listaReservas.push_back(reservaTemp);
+    this->listaReservas.insert(make_pair(pHuesped->getId(), reservaTemp));
 }
 
 unordered_map<int, huesped*> app::getMapaH(){

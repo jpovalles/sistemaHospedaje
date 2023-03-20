@@ -3,7 +3,11 @@
 //
 
 #include "Reserva.h"
-#include "app.h"
+
+Reserva::Reserva(string fechaInicio,string fechaFin, Propietario* pPropietario, huesped* pHuesped): fechaInicio(fechaInicio), fechaFin(fechaFin), pPropietario(pPropietario), pHuesped(pHuesped){}
+
+
+
 /*
 void Reserva::hacerReserva(app* pApp){
     int llaveA, llaveB;
