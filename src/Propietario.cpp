@@ -11,31 +11,18 @@ void Propietario::agregarHogar(string direccion, string descripcion, int camas, 
     this->pHogar = new Hogar(direccion, descripcion, camas, bebes);
 }
 
-//void Propietario::setId(int id){
-//    this->id = id;
-//}
-
 int Propietario::getId(){
     return id;
 }
 
-//void Propietario::setNombre(string nombre){
-//    this->nombre = nombre;
-//}
 string Propietario::getNombre(){
     return nombre;
 }
 
-//void Propietario::setSexo(string sexo){
-//    this->sexo = sexo;
-//}
 string Propietario::getSexo(){
     return sexo;
 }
 
-//void Propietario::setNacimiento(string nacimiento){
-//    this->nacimiento = nacimiento;
-//}
 string Propietario::getNacimiento(){
     return nacimiento;
 }

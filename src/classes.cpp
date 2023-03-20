@@ -4,7 +4,6 @@
 #include "app.h"
 #include "huesped.h"
 #include "Propietario.h"
-#include "Hogar.h"
 #include "Evaluacion.h"
 
 
