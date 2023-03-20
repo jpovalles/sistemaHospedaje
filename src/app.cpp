@@ -12,11 +12,11 @@ void app:: agregarHuesped(int id, string nombre, string sexo, string fechaNacimi
 
 void app::mostrarHuespedes() {
     unordered_map<int,huesped*>::iterator mapa;
-    cout<<"Los huespedes son: "<< endl;
+    cout<<" "<< endl;
     int cont = 1;
     for(mapa = this->mapaHuespedes.begin(); mapa != this->mapaHuespedes.end(); ++mapa){
         huesped* pHuespedTemp = mapa->second;
-        cout<<cont<<". ID: "<<pHuespedTemp->getId()<<" Nombre: "<<pHuespedTemp->getNombre()<<" Puntaje: "<<pHuespedTemp->getPuntaje()<<"\n"<< endl;
+        cout<<cont<<". ID: "<<pHuespedTemp->getId()<<" | Nombre: "<<pHuespedTemp->getNombre()<<" | Puntaje: "<<pHuespedTemp->getPuntaje()<< endl;
         cont++;
     }
 }
@@ -36,12 +36,11 @@ void app::mostrarHogares(){
     for(mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa){
         Propietario* pPropietarioTemp = mapa->second;
         if(pPropietarioTemp->getDisponibilidad()==1){
-            cout<<cont<<". Propietario: "<<pPropietarioTemp->getNombre()<<" Puntaje: "<<pPropietarioTemp->getPuntaje()<<endl;
-            cout<<"Direccion: "<<pPropietarioTemp->getHogar()->getDireccion()<< " Descripcion: "<<pPropietarioTemp->getHogar()->getDescripcion();
-            cout<<" Numero de camas: "<<pPropietarioTemp->getHogar()->getCamas();
-            if(pPropietarioTemp->getHogar()->getBebes()==1){cout<<" Si se permiten bebes\n"<<endl;}
+            cout<<cont<<". ID: "<<pPropietarioTemp->getId()<<" | Propietario: "<<pPropietarioTemp->getNombre()<<" | Puntaje: "<<pPropietarioTemp->getPuntaje()<<endl;
+            cout<<" | Direccion: "<<pPropietarioTemp->getHogar()->getDireccion()<< " | Descripcion: "<<pPropietarioTemp->getHogar()->getDescripcion();
+            cout<<" | Numero de camas: "<<pPropietarioTemp->getHogar()->getCamas();
+            if(pPropietarioTemp->getHogar()->getBebes()==1){cout<<" | Si se permiten bebes\n"<<endl;}
             else{cout<<" No se permiten bebes\n"<<endl;}
-            cont++;
         }
     }
 }

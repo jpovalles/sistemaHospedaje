@@ -33,7 +33,7 @@ void crearPropietario(app* pApp){
     cin >> camas;
     cout << "Puede alojar bebes? (0)NO (1)SI" << endl;
     cin >> bebes;
-
+    cout<<"\n";
     pApp->inscribirPropietario(id, nombre,sexo, nacimiento, puntaje, disponibilidad, direccion, camas, bebes, descripcion);
 }
 
@@ -72,12 +72,13 @@ void hacerReserva(app* pApp){
     cout<<"Fecha Final de la reserva: "<<endl;
     cin>>fechaFin;
 
-    cout<<"Donde te gustaria hospedarte: "<<endl;
+    cout<<"Donde te gustaria hospedarte: (Escribe el ID del Propietario)"<<endl;
     pApp->mostrarHogares();
     cin>>llaveB;
     Propietario* propTemp = pApp->getMapaProp()[llaveB];
     pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
     pApp->getMapaReservas()[llaveA]->modificarDisp(pApp->getMapaReservas()[llaveA]->getPropietario(), 0);
+
 }
 
 
@@ -124,7 +125,7 @@ void mostrarMenu(app *pApp){
     int opcion = 0;
     do{
         std::cout << "Bienvenido al GlizzyHospedaje\n";
-        cout << "¿Que desea hacer?\n";
+        cout << "Que desea hacer?\n";
         cout << "1. Crear propietario\n";
         cout << "2. Crear huesped\n";
         cout << "3. Realizar reserva\n";
