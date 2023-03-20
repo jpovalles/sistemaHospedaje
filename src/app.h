@@ -12,6 +12,7 @@
 #include "Propietario.h"
 #include "Hogar.h"
 #include "Reserva.h"
+#include "Evaluacion.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
     unordered_map<int, Reserva*> listaReservas;
-
+    vector<Evaluacion> listaEvaluaciones;
 public:
     app() = default;
 
@@ -36,6 +37,8 @@ public:
     void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
     unordered_map<int, Reserva*> getMapaReservas();
     void checkout(int id);
+
+    void agregarEvaluacion(Evaluacion tempEvo);
 };
 
 

@@ -66,3 +66,8 @@ unordered_map<int, Propietario*> app::getMapaProp(){
 unordered_map<int, Reserva*> app::getMapaReservas(){
     return listaReservas;
 }
+
+void app::agregarEvaluacion(Evaluacion tempEvo){
+    this->listaEvaluaciones.push_back(tempEvo);
+    cout << "Su evaluacion fue registrada!\n";
+}

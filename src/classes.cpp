@@ -95,7 +95,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 
     Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
     evHuesped.actualizarPuntajeP(propietarioTemp);
-    // addEvaluacion();
+    pApp->agregarEvaluacion(evHuesped);
 
     cout << "Sr " << propietarioTemp->getNombre() << " valore el huesped del 1 al 5\n";
     cin >> calificacion;
@@ -104,7 +104,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 
     Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
     evPropietario.actualizarPuntajeH(huespedTemp);
-    // addEvaluacion();
+    pApp->agregarEvaluacion(evPropietario);
 }
 
 void eliminarReserva(app* pApp){
