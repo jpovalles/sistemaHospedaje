@@ -102,24 +102,18 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 }
 
 void eliminarReserva(app* pApp){
-    int idH, idP, llave;
+    int llave;
     cout<<"Quien desea eliminar la reserva? (Escribe tu id): "<<endl;
     cin>>llave;
+
     string aux = pApp->getMapaReservas()[llave]->getFechaF();
+    huesped *huespedTemp =  pApp->getMapaReservas()[llave]->getHuesped();
+    Propietario *propietarioTemp = pApp->getMapaReservas()[llave]->getPropietario();
+
     pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
     pApp->checkout(llave);
 
-    unordered_map<int, huesped*> mapHTemp = pApp->getMapaH();
-    unordered_map<int, Propietario*> mapPTemp = pApp->getMapaProp();
-
-    huesped *huespedTemp =  mapHTemp[idH];
-    Propietario *propietarioTemp = mapPTemp[idP];
-
-    string fechaReserva;
-
-    evaluacion(huespedTemp, propietarioTemp, fechaReserva);
-
-
+    evaluacion(huespedTemp, propietarioTemp, aux);
 }
 
 void mostrarMenu(app *pApp){
