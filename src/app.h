@@ -24,9 +24,13 @@ public:
     ~app();
     void agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
     void mostrarHuespedes();
+    unordered_map<int, huesped*> getMapaH();
 
     void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
     void mostrarPropietarios();
+    unordered_map<int, Propietario*> getMapaProp();
+
+    void reservas(string fechaInicio, string fechaFin);
 };
 
 

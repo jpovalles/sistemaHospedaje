@@ -36,3 +36,15 @@ void app::mostrarPropietarios(){
         cont++;
     }
 }
+
+void app::reservas(string fechaInicio, string fechaFin){
+
+}
+
+unordered_map<int, huesped*> app::getMapaH(){
+    return mapaHuespedes;
+}
+
+unordered_map<int, Propietario*> app::getMapaProp(){
+    return mapaPropietarios;
+}
