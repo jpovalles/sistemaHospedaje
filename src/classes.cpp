@@ -76,7 +76,7 @@ void hacerReserva(app* pApp){
     cin>>llaveB;
     Propietario* propTemp = pApp->getMapaProp()[llaveB];
 
-    pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
+    //pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
 }
 
 void mostrarMenu(app *pApp){

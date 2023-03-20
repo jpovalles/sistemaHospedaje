@@ -39,12 +39,12 @@ void app::mostrarPropietarios(){
         cont++;
     }
 }
-
+/*
 void app::reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped){
     Reserva* reservaTemp = new Reserva(fechaInicio, fechaFin, pPropietario, pHuesped);
     this->listaReservas.push_back(reservaTemp);
 }
-
+*/
 unordered_map<int, huesped*> app::getMapaH(){
     return mapaHuespedes;
 }

@@ -9,7 +9,6 @@
 #include <string>
 #include "huesped.h"
 #include "Propietario.h"
-#include "app.h"
 
 using namespace std;
 

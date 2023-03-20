@@ -20,7 +20,7 @@ class app {
 private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
-    vector<Reserva*> listaReservas;
+    unordered_map<int, Reserva*> mapaReservas;
 public:
     app() = default;
 
@@ -32,7 +32,7 @@ public:
     void mostrarPropietarios();
     unordered_map<int, Propietario*> getMapaProp();
 
-    void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    //void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
 };
 
 
