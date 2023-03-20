@@ -16,11 +16,11 @@ class Reserva {
 private:
     string fechaInicio;
     string fechaFin;
-    huesped* huesped;
-    Propietario* Propietario;
+    class huesped* huesped;
+    class Propietario* Propietario;
 public:
     Reserva() = default;
-    Reserva(string fechaInicio,string fechaFin,class huesped* huesped,class Propietario* Propietario);
+    Reserva(string fechaInicio,string fechaFin,class huesped* huesped, class Propietario* Propietario);
     ~Reserva();
 };
 
