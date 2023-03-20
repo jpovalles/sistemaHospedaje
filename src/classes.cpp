@@ -112,6 +112,26 @@ void mostrarMenu(app *pApp){
     }while(opcion != 0);
 }
 
+
+void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp){
+
+}
+
+void eliminarReserva(app* pApp){
+    int idH, idP;
+    unordered_map<int, huesped*> mapHTemp = pApp->getMapaH();
+    unordered_map<int, Propietario*> mapPTemp = pApp->getMapaProp();
+
+    huesped *huespedTemp =  mapHTemp[idH];
+    Propietario *propietarioTemp = mapPTemp[idP];
+
+    evaluacion(huespedTemp, propietarioTemp);
+
+
+}
+
+
+
 int main() {
     app* pApp = new app();
     mostrarMenu(pApp);

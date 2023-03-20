@@ -36,6 +36,7 @@ public:
     string getSexo();
     void setNacimiento(string nacimiento);
     string getNacimiento();
+    void setPuntaje(int puntaje);
     int getPuntaje();
     void setDisponibilidad(int disponibilidad);
     int getDisponibilidad();

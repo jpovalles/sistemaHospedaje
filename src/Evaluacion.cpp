@@ -4,4 +4,12 @@
 
 #include "Evaluacion.h"
 
-Evaluacion ::Evaluacion(string fecha, int calificacion, string comentario):fecha(fecha), calificacion(calificacion), comentario(comentario){}
+Evaluacion ::Evaluacion(string fecha, int calificacion, string comentario, string origen, string destino):fecha(fecha), calificacion(calificacion), comentario(comentario), origen(origen), destino(destino){}
+
+void Evaluacion::actualizarPuntajeH(huesped* pHuesped){
+    pHuesped->setPuntaje((pHuesped->getPuntaje() + this->calificacion) /2);
+}
+
+void Evaluacion::actualizarPuntajeP(Propietario* pPropietario){
+    pPropietario->setPuntaje((pPropietario->getPuntaje() + this->calificacion) /2);
+}

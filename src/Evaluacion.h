@@ -7,6 +7,9 @@
 
 #include <iostream>
 #include <string>
+#include "huesped.h"
+#include "Propietario.h"
+
 
 using namespace std;
 
@@ -19,7 +22,11 @@ private:
     string destino;
 public:
     Evaluacion() = default;
-    Evaluacion(string fecha, int calificacion, string comentario);
+    Evaluacion(string fecha, int calificacion, string comentario, string origen, string destino);
+
+    void actualizarPuntajeH(huesped* pHuesped);
+    void actualizarPuntajeP(Propietario* pPropietario);
+
 };
 
 

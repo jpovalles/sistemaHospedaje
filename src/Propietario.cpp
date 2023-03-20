@@ -39,6 +39,10 @@ string Propietario::getNacimiento(){
     return nacimiento;
 }
 
+void Propietario::setPuntaje(int puntaje){
+    this->puntaje = puntaje;
+}
+
 int Propietario::getPuntaje(){
     return puntaje;
 }
