@@ -95,6 +95,11 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
     evHuesped.actualizarPuntajeP(propietarioTemp);
     // addEvaluacion();
 
+    cout << "Sr " << propietarioTemp->getNombre() << " valore el huesped del 1 al 5\n";
+    cin >> calificacion;
+    cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
+    cin >> comentario;
+
     Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
     evPropietario.actualizarPuntajeH(huespedTemp);
     // addEvaluacion();
