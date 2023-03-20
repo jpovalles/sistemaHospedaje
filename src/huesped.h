@@ -22,25 +22,25 @@ public:
     huesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
     ~huesped();
 
-    void setId(int id);
+    //void setId(int id);
     int getId();
 
-    void setNombre(string nombre);
+    //void setNombre(string nombre);
     string getNombre();
 
-    void setSexo(string sexo);
+    //void setSexo(string sexo);
     string getSexo();
 
-    void setNacimiento(string fechaNacimiento);
+    //void setNacimiento(string fechaNacimiento);
     string getNacimiento();
 
     void setPuntaje(int puntaje);
     int getPuntaje();
 
-    void setClinica(string clinica);
+    //void setClinica(string clinica);
     string getClinica();
 
-    void setProcedencia(string procedencia);
+    //void setProcedencia(string procedencia);
     string getProcedencia();
 };
 

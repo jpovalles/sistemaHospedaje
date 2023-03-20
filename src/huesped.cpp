@@ -7,6 +7,7 @@
 huesped::huesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica,
                  string procedencia): id(id), nombre(nombre), sexo(sexo), puntaje(puntaje), clinica(clinica), procedencia(procedencia){}
 
+                 /*
 void huesped:: setId(int id){
     this->id = id;
 }
@@ -31,7 +32,7 @@ void huesped:: setClinica(string clinica){
 void huesped:: setProcedencia(string procedencia){
     this->procedencia = procedencia;
 }
-
+*/
 
 int huesped:: getId(){
     return this->id;

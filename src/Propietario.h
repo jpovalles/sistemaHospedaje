@@ -28,13 +28,13 @@ public:
     Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
     ~Propietario();
     void agregarHogar(string direccion, string descripcion, int camas, int bebes);
-    void setId(int id);
+    //void setId(int id);
     int getId();
-    void setNombre(string nombre);
+    //void setNombre(string nombre);
     string getNombre();
-    void setSexo(string sexo);
+    //void setSexo(string sexo);
     string getSexo();
-    void setNacimiento(string nacimiento);
+    //void setNacimiento(string nacimiento);
     string getNacimiento();
     void setPuntaje(int puntaje);
     int getPuntaje();
