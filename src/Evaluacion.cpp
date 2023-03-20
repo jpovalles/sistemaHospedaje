@@ -4,7 +4,7 @@
 
 #include "Evaluacion.h"
 
-Evaluacion ::Evaluacion(string fecha, int calificacion, string comentario, string origen, string destino):fecha(fecha), calificacion(calificacion), comentario(comentario), origen(origen), destino(destino){}
+Evaluacion ::Evaluacion(string fecha, float calificacion, string comentario, string origen, string destino):fecha(fecha), calificacion(calificacion), comentario(comentario), origen(origen), destino(destino){}
 
 void Evaluacion::actualizarPuntajeH(huesped* pHuesped){
     pHuesped->setPuntaje((pHuesped->getPuntaje() + this->calificacion) /2);

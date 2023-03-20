@@ -4,7 +4,7 @@
 
 #include "app.h"
 
-void app:: agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia){
+void app:: agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, float puntaje, string clinica, string procedencia){
     huesped* pHuespedTemp = new huesped(id, nombre, sexo, fechaNacimiento, puntaje, clinica, procedencia);
 
     this->mapaHuespedes.insert(make_pair(id, pHuespedTemp));
@@ -21,7 +21,7 @@ void app::mostrarHuespedes() {
     }
 }
 
-void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion){
+void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, float puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion){
     Propietario* pPropietarioTemp = new Propietario(id, nombre, sexo, nacimiento, puntaje, disponibilidad);
 
     pPropietarioTemp->agregarHogar(direccion, descripcion, camas, bebe);

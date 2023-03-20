@@ -25,11 +25,11 @@ private:
 public:
     app() = default;
 
-    void agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
+    void agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, float puntaje, string clinica, string procedencia);
     void mostrarHuespedes();
     unordered_map<int, huesped*> getMapaH();
 
-    void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion);
+    void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, float puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion);
     void mostrarHogares();
     unordered_map<int, Propietario*> getMapaProp();
 

@@ -4,7 +4,7 @@
 
 #include "huesped.h"
 
-huesped::huesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica,
+huesped::huesped(int id, string nombre, string sexo, string fechaNacimiento, float puntaje, string clinica,
                  string procedencia): id(id), nombre(nombre), sexo(sexo), puntaje(puntaje), clinica(clinica), procedencia(procedencia){}
 
 void huesped:: setId(int id){
@@ -20,7 +20,7 @@ void huesped:: setNacimiento(string fechaNacimiento){
     this->fechaNacimiento = fechaNacimiento;
 }
 
-void huesped:: setPuntaje(int puntaje){
+void huesped:: setPuntaje(float puntaje){
     this->puntaje = puntaje;
 }
 

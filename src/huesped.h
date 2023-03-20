@@ -14,12 +14,12 @@ private:
     string nombre;
     string sexo;
     string fechaNacimiento;
-    int puntaje;
+    float puntaje;
     string clinica;
     string procedencia;
 public:
     huesped() = default;
-    huesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
+    huesped(int id, string nombre, string sexo, string fechaNacimiento, float puntaje, string clinica, string procedencia);
     ~huesped();
 
     void setId(int id);
@@ -34,7 +34,7 @@ public:
     void setNacimiento(string fechaNacimiento);
     string getNacimiento();
 
-    void setPuntaje(int puntaje);
+    void setPuntaje(float puntaje);
     int getPuntaje();
 
     void setClinica(string clinica);

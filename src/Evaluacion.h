@@ -16,13 +16,13 @@ using namespace std;
 class Evaluacion {
 private:
     string fecha;
-    int calificacion;
+    float calificacion;
     string comentario;
     string origen;
     string destino;
 public:
     Evaluacion() = default;
-    Evaluacion(string fecha, int calificacion, string comentario, string origen, string destino);
+    Evaluacion(string fecha, float calificacion, string comentario, string origen, string destino);
 
     void actualizarPuntajeH(huesped* pHuesped);
     void actualizarPuntajeP(Propietario* pPropietario);
