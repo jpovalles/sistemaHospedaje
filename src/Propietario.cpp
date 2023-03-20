@@ -43,8 +43,8 @@ int Propietario::getPuntaje(){
     return puntaje;
 }
 
-void Propietario::setDisponibilidad(int disponibilidad){
-    this->disponibilidad = disponibilidad;
+void Propietario::setDisponibilidad(){
+    this->disponibilidad = 0;
 }
 int Propietario::getDisponibilidad(){
     return disponibilidad;
