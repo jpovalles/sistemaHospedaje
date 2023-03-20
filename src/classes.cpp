@@ -9,10 +9,6 @@
 
 #include <iostream>
 
-int main() {
-    std::cout << "Hello, World! src" << std::endl;
-    return 0;
-}
 
 
 void crearPropietario(app* pApp){
@@ -62,4 +58,44 @@ void crearHuesped(app* pApp){
     cin >> procedencia;
 
     pApp->agregarHuesped(id, nombre, sexo, nacimiento, puntaje, clinica, procedencia);
+}
+
+void mostrarMenu(app *pApp){
+    int opcion = 0;
+    do{
+        std::cout << "Bienvenido al GlizzyHospedaje\n";
+        cout << "¿Que desea hacer?\n";
+        cout << "1. Crear propietario\n";
+        cout << "2. Crear huesped\n";
+        cout << "3. Realizar reserva\n";
+        cout << "4. Hacer checkout\n";
+        cout << "0. Salir\n";
+
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                crearPropietario(pApp);
+                break;
+            case 2:
+                crearHuesped(pApp);
+                break;
+            case 3:
+                pApp->mostrarHuespedes();
+                break;
+            case 4:
+                cout << "En manenimiento\n";
+                break;
+            default:
+                break;
+        }
+    }while(opcion != 0);
+}
+
+int main() {
+    app* pApp = new app();
+    mostrarMenu(pApp);
+
+    delete pApp;
+    return 0;
 }
