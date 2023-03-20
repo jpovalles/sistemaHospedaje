@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include "Hogar.h"
+#include <unordered_map>
 
 using namespace std;
 
@@ -21,6 +22,8 @@ private:
     int recibirHuesped;
     int disponibilidad;
     Hogar* pHogar;
+    unordered_map<int, Propietario*> mapaPropietarios;
+
 
 public:
     Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
@@ -36,6 +39,8 @@ public:
     int getPuntaje();
     void setDisponibilidad(int disponibilidad);
     int getDisponibilidad();
+    void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
+    void mostrarPropietarios();
 };
 
 
