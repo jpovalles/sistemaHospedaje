@@ -147,7 +147,9 @@ void mostrarMenu(app *pApp){
                 }else{hacerReserva(pApp);}
                 break;
             case 4:
-                eliminarReserva(pApp);
+                if(pApp->getMapaReservas().begin() == NULL){
+                    cout<<"No se ha hecho ninguna reserva aun\n"<<endl;
+                }else{eliminarReserva(pApp);}
                 break;
             default:
                 break;
