@@ -29,13 +29,13 @@ void app::inscribirPropietario(int id, string nombre, string sexo, string nacimi
     this->mapaPropietarios.insert(make_pair(id, pPropietarioTemp));
 }
 
-void app::mostrarPropietarios(){
+void app::mostrarHogares(){
     unordered_map<int,Propietario*>::iterator mapa;
-    cout<<"Los propietarios son: "<< endl;
+    cout<<"Los hogares son: "<< endl;
     int cont=1;
     for(mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa){
         Propietario* pPropietarioTemp = mapa->second;
-        cout<<cont<<". ID: "<<pPropietarioTemp->getId()<<" Nombre: "<<pPropietarioTemp->getNombre()<<" Puntaje: "<<pPropietarioTemp->getPuntaje()<<"\n"<< endl;
+        cout<<cont<<
         cont++;
     }
 }
