@@ -16,19 +16,23 @@ void crearPropietario(app* pApp){
     string nombre, sexo, nacimiento;
     cout << "Ingrese su nombre completo:" << endl;
     cin >> nombre;
+    getline(cin, nombre);
     cout << "Ingrese su identificacion unica:" << endl;
     cin >> id;
     cout << "Ingrese su sexo (F o M)" << endl;
     cin >> sexo;
     cout << "Ingrese su fecha de nacimiento:" << endl;
     cin >> nacimiento;
+    getline(cin, nacimiento);
 
     int camas, bebes;
     string direccion, descripcion;
     cout << "Ingrese la direccion de su hogar:" << endl;
     cin >> direccion;
+    getline(cin, direccion);
     cout << "Ingrese una breve descripcion de su hogar:" << endl;
     cin >> descripcion;
+    getline(cin, descripcion);
     cout << "Cuantas camas tiene su hogar?" << endl;
     cin >> camas;
     cout << "Puede alojar bebes? (0)NO (1)SI" << endl;
@@ -43,18 +47,22 @@ void crearHuesped(app* pApp){
     string nombre, sexo, nacimiento;
     cout << "Ingrese su nombre completo:" << endl;
     cin >> nombre;
+    getline(cin, nombre);
     cout << "Ingrese su identificacion unica:" << endl;
     cin >> id;
     cout << "Ingrese su sexo (F o M)" << endl;
     cin >> sexo;
     cout << "Ingrese su fecha de nacimiento:" << endl;
     cin >> nacimiento;
+    getline(cin, nacimiento);
 
     string clinica, procedencia;
     cout << "Ingrese su clinica:" << endl;
     cin >> clinica;
+    getline(cin, clinica);
     cout << "Ingrese su lugar de procedencia:" << endl;
     cin >> procedencia;
+    getline(cin, procedencia);
 
     pApp->agregarHuesped(id, nombre, sexo, nacimiento, puntaje, clinica, procedencia);
 }
@@ -69,8 +77,10 @@ void hacerReserva(app* pApp){
 
     cout<<"Fecha inicial de la reserva: "<<endl;
     cin>>fechaInicio;
+    getline(cin, fechaInicio);
     cout<<"Fecha Final de la reserva: "<<endl;
     cin>>fechaFin;
+    getline(cin, fechaFin);
 
     pApp->mostrarHogares();
     cin>>llaveB;
@@ -90,6 +100,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
     cin >> calificacion;
     cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
     cin >> comentario;
+    getline(cin, comentario);
 
     Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
     evHuesped.actualizarPuntajeP(propietarioTemp);
@@ -99,6 +110,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
     cin >> calificacion;
     cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
     cin >> comentario;
+    getline(cin, comentario);
 
     Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
     evPropietario.actualizarPuntajeH(huespedTemp);
