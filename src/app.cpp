@@ -51,6 +51,11 @@ void app::reservas(string fechaInicio, string fechaFin, Propietario* pPropietari
     this->listaReservas.insert(make_pair(pHuesped->getId(), reservaTemp));
 }
 
+void app::checkout(int id){
+    cout<<"El checkout de "<<listaReservas[id]->getHuesped()->getNombre()<<" se realizo exitosamente"<<endl;
+    listaReservas.erase(id);
+}
+
 unordered_map<int, huesped*> app::getMapaH(){
     return mapaHuespedes;
 }

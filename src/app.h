@@ -35,6 +35,7 @@ public:
 
     void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
     unordered_map<int, Reserva*> getMapaReservas();
+    void checkout(int id);
 };
 
 
