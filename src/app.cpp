@@ -31,16 +31,20 @@ void app::inscribirPropietario(int id, string nombre, string sexo, string nacimi
 
 void app::mostrarHogares(){
     unordered_map<int,Propietario*>::iterator mapa;
-    cout<<"Los hogares disponibles son: "<< endl;
     int cont=1;
-    for(mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa){
-        Propietario* pPropietarioTemp = mapa->second;
-        if(pPropietarioTemp->getDisponibilidad()==1){
-            cout<<cont<<". ID: "<<pPropietarioTemp->getId()<<" | Propietario: "<<pPropietarioTemp->getNombre()<<" | Puntaje: "<<pPropietarioTemp->getPuntaje()<<endl;
-            cout<<" | Direccion: "<<pPropietarioTemp->getHogar()->getDireccion()<< " | Descripcion: "<<pPropietarioTemp->getHogar()->getDescripcion();
-            cout<<" | Numero de camas: "<<pPropietarioTemp->getHogar()->getCamas();
-            if(pPropietarioTemp->getHogar()->getBebes()==1){cout<<" | Si se permiten bebes\n"<<endl;}
-            else{cout<<" No se permiten bebes\n"<<endl;}
+    cout<<"Donde te gustaria hospedarte: (Escribe el ID del Propietario)"<<endl;
+    cout<<"Los hogares disponibles son: "<< endl;
+    for (mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa) {
+        Propietario *pPropietarioTemp = mapa->second;
+        if (pPropietarioTemp->getDisponibilidad() == 1) {
+            cout << cont << ". ID: " << pPropietarioTemp->getId() << " | Propietario: "
+                 << pPropietarioTemp->getNombre() << " | Puntaje: " << pPropietarioTemp->getPuntaje();
+            cout << " | Direccion: " << pPropietarioTemp->getHogar()->getDireccion() << " | Descripcion: "
+                 << pPropietarioTemp->getHogar()->getDescripcion();
+            cout << " | Numero de camas: " << pPropietarioTemp->getHogar()->getCamas();
+            if (pPropietarioTemp->getHogar()->getBebes() == 1) { cout << " | Si se permiten bebes" << endl; }
+            else { cout << " | No se permiten bebes" << endl; }
+            cont++;
         }
     }
 }
@@ -69,5 +73,5 @@ unordered_map<int, Reserva*> app::getMapaReservas(){
 
 void app::agregarEvaluacion(Evaluacion tempEvo){
     this->listaEvaluaciones.push_back(tempEvo);
-    cout << "Su evaluacion fue registrada!\n";
+    cout << "Su evaluacion fue registrada!\n"<<endl;
 }

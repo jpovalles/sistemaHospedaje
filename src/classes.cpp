@@ -62,7 +62,7 @@ void crearHuesped(app* pApp){
 void hacerReserva(app* pApp){
     int llaveA, llaveB;
     string fechaInicio, fechaFin;
-    cout<<"Quién eres? (Escribe tu ID):"<<endl;
+    cout<<"Quien eres? (Escribe tu ID):"<<endl;
     pApp->mostrarHuespedes();
     cin>>llaveA;
     huesped* huespedTemp = pApp->getMapaH()[llaveA];
@@ -72,7 +72,6 @@ void hacerReserva(app* pApp){
     cout<<"Fecha Final de la reserva: "<<endl;
     cin>>fechaFin;
 
-    cout<<"Donde te gustaria hospedarte: (Escribe el ID del Propietario)"<<endl;
     pApp->mostrarHogares();
     cin>>llaveB;
     Propietario* propTemp = pApp->getMapaProp()[llaveB];
@@ -119,6 +118,7 @@ void eliminarReserva(app* pApp){
     pApp->checkout(llave);
 
     evaluacion(huespedTemp, propietarioTemp, aux, pApp);
+
 }
 
 void mostrarMenu(app *pApp){
@@ -142,7 +142,9 @@ void mostrarMenu(app *pApp){
                 crearHuesped(pApp);
                 break;
             case 3:
-                hacerReserva(pApp);
+                if(pApp->getMapaProp().begin() == NULL || pApp->getMapaH().begin()==NULL){
+                    cout<<"Es posible que aun no hayan Huespedes u Hogares registrados\n"<<endl;
+                }else{hacerReserva(pApp);}
                 break;
             case 4:
                 eliminarReserva(pApp);

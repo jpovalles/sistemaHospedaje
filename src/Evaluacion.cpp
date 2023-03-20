@@ -8,10 +8,10 @@ Evaluacion ::Evaluacion(string fecha, float calificacion, string comentario, str
 
 void Evaluacion::actualizarPuntajeH(huesped* pHuesped){
     pHuesped->setPuntaje((pHuesped->getPuntaje() + this->calificacion) /2);
-    cout << "Puntaje actualizado!\n";
+    cout << "\nPuntaje actualizado!\n";
 }
 
 void Evaluacion::actualizarPuntajeP(Propietario* pPropietario){
     pPropietario->setPuntaje((pPropietario->getPuntaje() + this->calificacion) /2);
-    cout << "Puntaje actualizado!\n";
+    cout << "\nPuntaje actualizado!\n";
 }
