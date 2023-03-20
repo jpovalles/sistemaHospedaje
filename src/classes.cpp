@@ -123,7 +123,7 @@ void eliminarReserva(app* pApp){
     string aux = pApp->getMapaReservas()[llave]->getFechaF();
     pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
     pApp->checkout(llave);
-    
+
     unordered_map<int, huesped*> mapHTemp = pApp->getMapaH();
     unordered_map<int, Propietario*> mapPTemp = pApp->getMapaProp();
 
