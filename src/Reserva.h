@@ -9,6 +9,7 @@
 #include <string>
 #include "huesped.h"
 #include "Propietario.h"
+#include "app.h"
 
 using namespace std;
 
@@ -17,12 +18,15 @@ private:
     string fechaInicio;
     string fechaFin;
     huesped* pHuesped;
-    Propietario* Propietario;
+    Propietario* propietario;
+
 public:
     Reserva() = default;
-    Reserva(string fechaInicio,string fechaFin, class huesped, class Propietario);
+    Reserva(string fechaInicio,string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    //void hacerReserva(app* pApp);
     ~Reserva();
-
+    string getFechaI();
+    string getFechaF();
 
 };
 

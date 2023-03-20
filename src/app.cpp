@@ -21,8 +21,11 @@ void app::mostrarHuespedes() {
     }
 }
 
-void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad){
+void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion){
     Propietario* pPropietarioTemp = new Propietario(id, nombre, sexo, nacimiento, puntaje, disponibilidad);
+
+    pPropietarioTemp->agregarHogar(direccion, descripcion, camas, bebe);
+
     this->mapaPropietarios.insert(make_pair(id, pPropietarioTemp));
 }
 
@@ -37,8 +40,9 @@ void app::mostrarPropietarios(){
     }
 }
 
-void app::reservas(string fechaInicio, string fechaFin){
-
+void app::reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped){
+    Reserva* reservaTemp = new Reserva(fechaInicio, fechaFin, pPropietario, pHuesped);
+    this->listaReservas.push_back(reservaTemp);
 }
 
 unordered_map<int, huesped*> app::getMapaH(){

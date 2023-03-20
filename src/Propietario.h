@@ -27,6 +27,7 @@ private:
 
 public:
     Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
+    ~Propietario();
     void agregarHogar(string direccion, string descripcion, int camas, int bebes);
     void setId(int id);
     int getId();
