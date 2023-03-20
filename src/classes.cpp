@@ -14,12 +14,13 @@ int main() {
     return 0;
 }
 
-//string direccion, string descripcion, int camas, int bebes
 
 void crearPropietario(app* pApp){
     int id;
     int puntaje = 0, disponibilidad = 1;
     string nombre, sexo, nacimiento;
+    cout << "Ingrese su nombre completo:" << endl;
+    cin >> nombre;
     cout << "Ingrese su identificacion unica:" << endl;
     cin >> id;
     cout << "Ingrese su sexo (F o M)" << endl;
@@ -39,4 +40,26 @@ void crearPropietario(app* pApp){
     cin >> bebes;
 
     pApp->inscribirPropietario(id, nombre,sexo, nacimiento, puntaje, disponibilidad, direccion, camas, bebes, descripcion);
+}
+
+void crearHuesped(app* pApp){
+    int id;
+    int puntaje = 0;
+    string nombre, sexo, nacimiento;
+    cout << "Ingrese su nombre completo:" << endl;
+    cin >> nombre;
+    cout << "Ingrese su identificacion unica:" << endl;
+    cin >> id;
+    cout << "Ingrese su sexo (F o M)" << endl;
+    cin >> sexo;
+    cout << "Ingrese su fecha de nacimiento:" << endl;
+    cin >> nacimiento;
+
+    string clinica, procedencia;
+    cout << "Ingrese su clinica:" << endl;
+    cin >> clinica;
+    cout << "Ingrese su lugar de procedencia:" << endl;
+    cin >> procedencia;
+
+    pApp->agregarHuesped(id, nombre, sexo, nacimiento, puntaje, clinica, procedencia);
 }
