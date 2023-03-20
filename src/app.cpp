@@ -21,8 +21,11 @@ void app::mostrarHuespedes() {
     }
 }
 
-void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad){
+void app::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion){
     Propietario* pPropietarioTemp = new Propietario(id, nombre, sexo, nacimiento, puntaje, disponibilidad);
+
+    pPropietarioTemp->agregarHogar(direccion, descripcion, camas, bebe);
+
     this->mapaPropietarios.insert(make_pair(id, pPropietarioTemp));
 }
 
