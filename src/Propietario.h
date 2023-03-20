@@ -22,7 +22,7 @@ private:
     int recibirHuesped;
     int disponibilidad;
     Hogar* pHogar;
-    unordered_map<int, Propietario*> mapaPropietarios;
+
 
 
 public:
@@ -39,8 +39,7 @@ public:
     int getPuntaje();
     void setDisponibilidad(int disponibilidad);
     int getDisponibilidad();
-    void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
-    void mostrarPropietarios();
+
 };
 
 

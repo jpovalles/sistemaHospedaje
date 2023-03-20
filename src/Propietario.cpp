@@ -50,19 +50,3 @@ int Propietario::getDisponibilidad(){
     return disponibilidad;
 }
 
-void Propietario::inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad){
-    Propietario* pPropietarioTemp = new Propietario(id, nombre, sexo, nacimiento, puntaje, disponibilidad);
-    this->mapaPropietarios.insert(make_pair(id, pPropietarioTemp));
-}
-
-void Propietario::mostrarPropietarios(){
-    unordered_map<int,Propietario*>::iterator mapa;
-    cout<<"Los propietarios son: "<< endl;
-    int cont=1;
-    for(mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa){
-        int llave =mapa->first;
-        Propietario* pPropietarioTemp = mapa->second;
-        cout<<cont<<". ID: "<<pPropietarioTemp->getId()<<" Nombre: "<<pPropietarioTemp->getNombre()<<" Puntaje: "<<pPropietarioTemp->getPuntaje()<<"\n"<< endl;
-        cont++;
-    }
-}

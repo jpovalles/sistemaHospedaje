@@ -18,10 +18,14 @@ using namespace std;
 class app {
 private:
     unordered_map<int, huesped*> mapaHuespedes;
+    unordered_map<int, Propietario*> mapaPropietarios;
 public:
     app() = default;
     ~app();
     void agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
+
+    void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
+    void mostrarPropietarios();
 };
 
 
