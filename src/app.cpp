@@ -31,20 +31,26 @@ void app::inscribirPropietario(int id, string nombre, string sexo, string nacimi
 
 void app::mostrarHogares(){
     unordered_map<int,Propietario*>::iterator mapa;
-    cout<<"Los hogares son: "<< endl;
+    cout<<"Los hogares disponibles son: "<< endl;
     int cont=1;
     for(mapa = this->mapaPropietarios.begin(); mapa != this->mapaPropietarios.end(); ++mapa){
         Propietario* pPropietarioTemp = mapa->second;
-        cout<<cont<<
-        cont++;
+        if(pPropietarioTemp->getDisponibilidad()==1){
+            cout<<cont<<". Propietario: "<<pPropietarioTemp->getNombre()<<" Puntaje: "<<pPropietarioTemp->getPuntaje()<<endl;
+            cout<<"Direccion: "<<pPropietarioTemp->getHogar()->getDireccion()<< " Descripcion: "<<pPropietarioTemp->getHogar()->getDescripcion();
+            cout<<" Numero de camas: "<<pPropietarioTemp->getHogar()->getCamas();
+            if(pPropietarioTemp->getHogar()->getBebes()==1){cout<<" Si se permiten bebes\n"<<endl;}
+            else{cout<<" No se permiten bebes\n"<<endl;}
+            cont++;
+        }
     }
 }
-/*
+
 void app::reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped){
     Reserva* reservaTemp = new Reserva(fechaInicio, fechaFin, pPropietario, pHuesped);
     this->listaReservas.insert(make_pair(pHuesped->getId(), reservaTemp));
 }
-*/
+
 unordered_map<int, huesped*> app::getMapaH(){
     return mapaHuespedes;
 }

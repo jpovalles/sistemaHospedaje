@@ -72,11 +72,11 @@ void hacerReserva(app* pApp){
     cin>>fechaFin;
 
     cout<<"Donde te gustaria hospedarte: "<<endl;
-    pApp->mostrarPropietarios();
+    pApp->mostrarHogares();
     cin>>llaveB;
     Propietario* propTemp = pApp->getMapaProp()[llaveB];
 
-    //pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
+    pApp->reservas(fechaInicio, fechaFin, propTemp, huespedTemp);
 }
 
 void mostrarMenu(app *pApp){

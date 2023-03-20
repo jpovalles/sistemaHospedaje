@@ -50,3 +50,6 @@ int Propietario::getDisponibilidad(){
     return disponibilidad;
 }
 
+Hogar* Propietario::getHogar(){
+    return pHogar;
+}

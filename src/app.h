@@ -20,7 +20,6 @@ class app {
 private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
-    unordered_map<int, Reserva*> mapaReservas;
     unordered_map<int, Reserva*> listaReservas;
 
 public:
@@ -34,7 +33,7 @@ public:
     void mostrarHogares();
     unordered_map<int, Propietario*> getMapaProp();
 
-    //void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
 };
 
 
