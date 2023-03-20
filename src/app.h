@@ -23,6 +23,7 @@ public:
     app() = default;
     ~app();
     void agregarHuesped(int id, string nombre, string sexo, string fechaNacimiento, int puntaje, string clinica, string procedencia);
+    void mostrarHuespedes();
 
     void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
     void mostrarPropietarios();
