@@ -80,6 +80,7 @@ void hacerReserva(app* pApp){
     pApp->getMapaReservas()[llaveA]->modificarDisp(pApp->getMapaReservas()[llaveA]->getPropietario(), 0);
 }
 
+
 // string fecha, int calificacion, string comentario, string origen, string destino
 void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
     string comentario, origen, destino;
@@ -145,11 +146,6 @@ void mostrarMenu(app *pApp){
         }
     }while(opcion != 0);
 }
-
-
-
-
-
 
 
 int main() {
