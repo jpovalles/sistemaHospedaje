@@ -20,7 +20,6 @@ private:
     int puntaje;
     int recibirHuesped;
     int disponibilidad;
-
     Hogar* pHogar;
 
 public:
