@@ -18,14 +18,14 @@ private:
     string nombre;
     string sexo;
     string nacimiento;
-    int puntaje;
+    float puntaje;
     int disponibilidad;
     Hogar* pHogar;
 
 
 
 public:
-    Propietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad);
+    Propietario(int id, string nombre, string sexo, string nacimiento, float puntaje, int disponibilidad);
     ~Propietario();
     void agregarHogar(string direccion, string descripcion, int camas, int bebes);
     //void setId(int id);
@@ -36,7 +36,7 @@ public:
     string getSexo();
     //void setNacimiento(string nacimiento);
     string getNacimiento();
-    void setPuntaje(int puntaje);
+    void setPuntaje(float puntaje);
     int getPuntaje();
     void setDisponibilidad(int disponibilidad);
     int getDisponibilidad();

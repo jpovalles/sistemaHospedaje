@@ -12,7 +12,8 @@
 
 void crearPropietario(app* pApp){
     int id;
-    int puntaje = 0, disponibilidad = 1;
+    float puntaje = 0;
+    int disponibilidad = 1;
     string nombre, sexo, nacimiento;
     cout << "Ingrese su nombre completo:" << endl;
     cin >> nombre;
@@ -39,7 +40,7 @@ void crearPropietario(app* pApp){
 
 void crearHuesped(app* pApp){
     int id;
-    int puntaje = 0;
+    float puntaje = 0;
     string nombre, sexo, nacimiento;
     cout << "Ingrese su nombre completo:" << endl;
     cin >> nombre;
@@ -83,9 +84,9 @@ void hacerReserva(app* pApp){
 
 
 // string fecha, int calificacion, string comentario, string origen, string destino
-void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
+void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva, app* pApp){
     string comentario, origen, destino;
-    int calificacion;
+    float calificacion;
 
     cout << "Sr " << huespedTemp->getNombre() << " valore el servicio del 1 al 5\n";
     cin >> calificacion;
@@ -94,7 +95,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 
     Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
     evHuesped.actualizarPuntajeP(propietarioTemp);
-    // addEvaluacion();
+    pApp->agregarEvaluacion(evHuesped);
 
     cout << "Sr " << propietarioTemp->getNombre() << " valore el huesped del 1 al 5\n";
     cin >> calificacion;
@@ -103,7 +104,7 @@ void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fecha
 
     Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
     evPropietario.actualizarPuntajeH(huespedTemp);
-    // addEvaluacion();
+    pApp->agregarEvaluacion(evPropietario);
 }
 
 void eliminarReserva(app* pApp){
@@ -118,7 +119,7 @@ void eliminarReserva(app* pApp){
     pApp->getMapaReservas()[llave]->modificarDisp(pApp->getMapaReservas()[llave]->getPropietario(), 1);
     pApp->checkout(llave);
 
-    evaluacion(huespedTemp, propietarioTemp, aux);
+    evaluacion(huespedTemp, propietarioTemp, aux, pApp);
 }
 
 void mostrarMenu(app *pApp){
