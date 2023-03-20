@@ -23,9 +23,7 @@ public:
     Reserva() = default;
     Reserva(string fechaInicio,string fechaFin);
     ~Reserva();
-
-    void setHuesped(int id);
-    void setPropietario(int id);
+    
 };
 
 
