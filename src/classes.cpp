@@ -80,37 +80,6 @@ void hacerReserva(app* pApp){
     pApp->getMapaReservas()[llaveA]->modificarDisp(pApp->getMapaReservas()[llaveA]->getPropietario(), 0);
 }
 
-void mostrarMenu(app *pApp){
-    int opcion = 0;
-    do{
-        std::cout << "Bienvenido al GlizzyHospedaje\n";
-        cout << "¿Que desea hacer?\n";
-        cout << "1. Crear propietario\n";
-        cout << "2. Crear huesped\n";
-        cout << "3. Realizar reserva\n";
-        cout << "4. Hacer checkout\n";
-        cout << "0. Salir\n";
-
-        cin >> opcion;
-
-        switch (opcion) {
-            case 1:
-                crearPropietario(pApp);
-                break;
-            case 2:
-                crearHuesped(pApp);
-                break;
-            case 3:
-                hacerReserva(pApp);
-                break;
-            case 4:
-                cout << "En manenimiento\n";
-                break;
-            default:
-                break;
-        }
-    }while(opcion != 0);
-}
 
 // string fecha, int calificacion, string comentario, string origen, string destino
 void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
@@ -152,6 +121,37 @@ void eliminarReserva(app* pApp){
 
 }
 
+void mostrarMenu(app *pApp){
+    int opcion = 0;
+    do{
+        std::cout << "Bienvenido al GlizzyHospedaje\n";
+        cout << "¿Que desea hacer?\n";
+        cout << "1. Crear propietario\n";
+        cout << "2. Crear huesped\n";
+        cout << "3. Realizar reserva\n";
+        cout << "4. Hacer checkout\n";
+        cout << "0. Salir\n";
+
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                crearPropietario(pApp);
+                break;
+            case 2:
+                crearHuesped(pApp);
+                break;
+            case 3:
+                hacerReserva(pApp);
+                break;
+            case 4:
+                eliminarReserva(pApp);
+                break;
+            default:
+                break;
+        }
+    }while(opcion != 0);
+}
 
 
 int main() {
