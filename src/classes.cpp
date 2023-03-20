@@ -5,6 +5,7 @@
 #include "huesped.h"
 #include "Propietario.h"
 #include "Hogar.h"
+#include "Evaluacion.h"
 
 
 #include <iostream>
@@ -111,9 +112,23 @@ void mostrarMenu(app *pApp){
     }while(opcion != 0);
 }
 
+// string fecha, int calificacion, string comentario, string origen, string destino
+void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp, string fechaReserva){
+    string comentario, origen, destino;
+    int calificacion;
 
-void evaluacion(huesped *huespedTemp, Propietario *propietarioTemp){
+    cout << "Sr " << huespedTemp->getNombre() << " valore el servicio del 1 al 5\n";
+    cin >> calificacion;
+    cout << "Muy bien! Agradeceriamos que nos deje un comentario\n";
+    cin >> comentario;
 
+    Evaluacion evHuesped(fechaReserva, calificacion, comentario, huespedTemp->getNombre(), propietarioTemp->getNombre());
+    evHuesped.actualizarPuntajeP(propietarioTemp);
+    // addEvaluacion();
+
+    Evaluacion evPropietario(fechaReserva, calificacion, comentario, propietarioTemp->getNombre(), huespedTemp->getNombre());
+    evPropietario.actualizarPuntajeH(huespedTemp);
+    // addEvaluacion();
 }
 
 void eliminarReserva(app* pApp){
@@ -130,7 +145,9 @@ void eliminarReserva(app* pApp){
     huesped *huespedTemp =  mapHTemp[idH];
     Propietario *propietarioTemp = mapPTemp[idP];
 
-    evaluacion(huespedTemp, propietarioTemp);
+    string fechaReserva;
+
+    evaluacion(huespedTemp, propietarioTemp, fechaReserva);
 
 
 }
