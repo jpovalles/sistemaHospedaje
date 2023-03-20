@@ -18,7 +18,7 @@ private:
     string fechaInicio;
     string fechaFin;
     huesped* pHuesped;
-    Propietario* propietario;
+    Propietario* pPropietario;
 
 public:
     Reserva() = default;
@@ -27,7 +27,8 @@ public:
     ~Reserva();
     string getFechaI();
     string getFechaF();
-
+    Propietario* getPropietario();
+    huesped* getHuesped();
 };
 
 

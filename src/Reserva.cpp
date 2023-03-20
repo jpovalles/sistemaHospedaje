@@ -28,3 +28,11 @@ string Reserva::getFechaI() {
 string Reserva::getFechaF() {
     return fechaFin;
 }
+
+Propietario* Reserva::getPropietario(){
+    return pPropietario;
+}
+
+huesped* Reserva::getHuesped(){
+    return pHuesped;
+}

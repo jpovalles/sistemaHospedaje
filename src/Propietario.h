@@ -19,7 +19,6 @@ private:
     string sexo;
     string nacimiento;
     int puntaje;
-    int recibirHuesped;
     int disponibilidad;
     Hogar* pHogar;
 
