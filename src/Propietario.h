@@ -40,7 +40,7 @@ public:
     int getPuntaje();
     void setDisponibilidad();
     int getDisponibilidad();
-
+    Hogar* getHogar();
 };
 
 

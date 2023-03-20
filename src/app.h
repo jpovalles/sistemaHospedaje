@@ -20,7 +20,6 @@ class app {
 private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
-    unordered_map<int, Reserva*> mapaReservas;
     unordered_map<int, Reserva*> listaReservas;
 
 public:
@@ -31,10 +30,10 @@ public:
     unordered_map<int, huesped*> getMapaH();
 
     void inscribirPropietario(int id, string nombre, string sexo, string nacimiento, int puntaje, int disponibilidad, string direccion, int camas, int bebe, string descripcion);
-    void mostrarPropietarios();
+    void mostrarHogares();
     unordered_map<int, Propietario*> getMapaProp();
 
-    //void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
+    void reservas(string fechaInicio, string fechaFin, Propietario* pPropietario, huesped* pHuesped);
 };
 
 
