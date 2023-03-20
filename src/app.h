@@ -21,6 +21,8 @@ private:
     unordered_map<int, huesped*> mapaHuespedes;
     unordered_map<int, Propietario*> mapaPropietarios;
     unordered_map<int, Reserva*> mapaReservas;
+    unordered_map<int, Reserva*> listaReservas;
+
 public:
     app() = default;
 
