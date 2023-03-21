@@ -1,6 +1,9 @@
 //
 // Created by jpova on 19/03/2023.
 //
+
+// Made by Juan Pablo Ospina y Juan Pablo Ovalles
+
 #include "app.h"
 #include "huesped.h"
 #include "Propietario.h"
